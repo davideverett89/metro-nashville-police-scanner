@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-view/>
+    <Nav />
+    <div class="container-fluid p-5">
+      <div class="row">
+        <router-view/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Nav from './components/Nav';
+
 export default {
   name: 'App',
+  components: {
+    Nav
+  }
 }
 </script>
 
@@ -18,6 +27,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
