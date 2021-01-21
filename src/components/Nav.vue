@@ -4,8 +4,8 @@
         <a class="navbar-brand ml-3" href="#">
             <img alt="MNPD logo" src="../assets/Metro_Nashville_Police.png" width="150" height="150">
         </a>
-        <div class="d-flex justify-content-center align-items-center">
-            <h1 class="display-4 mr-3">Metro Nashville Police Active Dispatch</h1>
+        <div class="d-flex justify-content-start align-items-center">
+            <h1 class="mr-3">Metro Nashville Police Active Dispatch</h1>
         </div>
     </nav>
 </div>
@@ -20,5 +20,12 @@ export default {
 <style lang="scss" scoped>
 .Nav {
     display: block;
+    .navbar {
+        div {
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+    }
 }
 </style>
