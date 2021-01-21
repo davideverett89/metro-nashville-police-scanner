@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Home from '../components/Home';
+import Home from '../views/Home';
 
 Vue.use(VueRouter)
 
@@ -13,8 +13,8 @@ const routes = [
     }
 ]
 
-const Router = new VueRouter({
+const router = new VueRouter({
     routes
 })
   
-export default Router
+export default router
