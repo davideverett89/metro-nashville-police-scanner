@@ -11,7 +11,17 @@
                         {{ x[column] }}
                     </td>
                     <td>
-                        <button class="btn" @click="() => handleClick(x.incident_type)">View</button>
+                        <router-link 
+                            :to="{
+                                name: 'Detail',
+                                params: {
+                                    call: x
+                                }
+                            }" 
+                            class="btn router-link"
+                        >
+                        View
+                        </router-link>
                     </td>
                 </tr>
             </tbody>
@@ -51,7 +61,7 @@ export default {
     display: block;
 }
 
-.Table button {
+.Table .router-link {
     background-color: $secondaryColor;
     border: 1px solid black;
 }

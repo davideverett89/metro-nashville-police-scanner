@@ -1,9 +1,9 @@
 <template>
 <div class="Nav">
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand ml-3" href="#">
+        <router-link class="navbar-brand ml-3" to="/">
             <img alt="MNPD logo" src="../assets/Metro_Nashville_Police.png" width="150" height="150">
-        </a>
+        </router-link>
         <div class="d-flex justify-content-start align-items-center">
             <h1 class="mr-3">Metro Nashville Police Active Dispatch</h1>
         </div>

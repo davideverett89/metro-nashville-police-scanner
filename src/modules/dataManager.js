@@ -1,8 +1,8 @@
-const remoteURL = 'https://data.nashville.gov/resource/qywv-8sc2.json';
+import apiKeys from '../helpers/apiKeys.json';
 
 export default {
-    get() {
-        return fetch(`${remoteURL}`, {
+    getCalls() {
+        return fetch(`${apiKeys.nashvilleDataURL}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -11,4 +11,11 @@ export default {
         })
           .then(response => response.json());
     },
+    getCoordinates(streetAddress) {
+        const address = streetAddress.split(" ");
+        return fetch(`${apiKeys.googleGeoCodingURL}${address[0]}+${address[1]}+${address[2]},+Nashville,+TN&key=${apiKeys.googleMapsAPIKey}`, {
+            method: "GET"
+        })
+          .then(response => response.json()).then(data => data.results[0].geometry.location);
+    }
 }
