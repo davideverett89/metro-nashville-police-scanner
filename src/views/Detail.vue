@@ -1,7 +1,18 @@
 <template>
-<div class="Detail bg-light col-12 border border-dark rounded">
-  <h1>Detail</h1>
-  <Map />
+<div class="Detail bg-light col-12 p-5 border border-dark rounded">
+  <h1 class="m-3">Dispatch Details</h1>
+  <Map :coords="coords" />
+  <div class="col-12 mx-auto">
+    <ul class="shadow list-group list-group-flush my-3">
+      <li 
+        v-for="(property, index) in Object.keys(call)" 
+        :key="index"
+        class="list-group-item lead"
+      >
+        {{ formatPropString(property)}}: {{ call[property] }}
+      </li>
+    </ul>
+  </div>
 </div>
 </template>
 
@@ -35,6 +46,14 @@ export default {
         }
       }
     },
+    methods: {
+      formatPropString(string) {
+        string = string.replace(/_/g, " ").replace(/(?: |\b)(\w)/g, (letter) => {
+          return letter.toUpperCase()
+        }).trim()
+        return string;
+      }
+    },
     mounted() {
       dataManager.getCoordinates(this.call.address).then(response => this.coords = response);
     }
@@ -44,5 +63,8 @@ export default {
 <style lang="scss" scoped>
 .Detail {
     display: block;
+    .shadow {
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    }
 }
 </style>
