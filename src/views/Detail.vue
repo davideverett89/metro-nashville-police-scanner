@@ -1,8 +1,8 @@
 <template>
 <div class="Detail bg-light col-12 border border-dark rounded">
-  <h1 class="my-1">Dispatch Details</h1>
-  <div class="container-fluid py-5">
-    <div class="row">
+  <h1 class="m-3">Dispatch Details</h1>
+  <div class="container-fluid">
+    <div class="row mb-4">
       <Map :coords="coords" class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12" />
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-auto">
         <ul class="shadow list-group list-group-flush">

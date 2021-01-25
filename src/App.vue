@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav />
-    <div class="container-fluid p-5">
+    <div class="container-fluid p-xl-5 p-lg-5 p-md-3 px-sm-0 py-sm-3 px-0 py-3">
       <div class="row">
         <router-view/>
       </div>

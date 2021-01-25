@@ -5,7 +5,6 @@
       <template v-slot:headers>
          <th data-prop="address">Address</th>
          <th data-prop="call_received">Call Received</th>
-         <th data-prop="call_received">Call Received</th>
          <th data-prop="city">Sector</th>
          <th data-prop="incident_type">Incident Type</th>
          <th data-prop="incident_type_code">Incident Code</th>
