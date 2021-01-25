@@ -1,6 +1,6 @@
 <template>
     <div class="Table col-12 text-center">
-        <table class="table">
+        <table class="table table-responsive-lg table-responsive-md table-responsive-sm">
             <thead>
                 <slot name="headers"></slot>
                 <th></th>
