@@ -1,7 +1,7 @@
 <template>
-<div class="Map col-12 mx-auto">
+<div class="Map m-auto">
     <GmapMap
-        class="Map shadow col-12 mx-auto border border-dark rounded"
+        class="shadow col-12 mx-auto"
         :center="coords"
         :zoom="13"
         map-type-id="terrain"
@@ -41,9 +41,9 @@ export default {
 <style lang="scss" scoped>
 .Map {
     display: block;
-    overflow: hidden;
     .shadow {
-      box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+        overflow: hidden;
     }
 }
 </style>

@@ -1,15 +1,28 @@
 import apiKeys from '../helpers/apiKeys.json';
+import { DateTime } from 'luxon';
 
 export default {
-    getCalls() {
-        return fetch(`${apiKeys.nashvilleDataURL}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            }
+    getCalls() { 
+        return new Promise((resolve, reject) => {
+            fetch(`${apiKeys.nashvilleDataURL}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const result = [];
+                data.forEach(x => {
+                    x.call_received = DateTime.fromISO(x.call_received).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
+                    x.last_updated = DateTime.fromISO(x.last_updated).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS);
+                    result.push(x);
+                })
+                resolve(result);
+            })
+              .catch(err => reject(err));
         })
-          .then(response => response.json());
     },
     getCoordinates(streetAddress) {
         const address = streetAddress.split(" ");
