@@ -17,7 +17,6 @@
 
 <script>
 import dataManager from '../modules/dataManager';
-// import { DateTime } from 'luxon';
 
 import Table from '../components/Table';
 
@@ -37,7 +36,6 @@ export default {
       }
     },
     mounted() {
-      // console.log(DateTime.fromISO("2021-01-24T14:32:55.000").toString());
       dataManager.getCalls().then(data => this.activeCalls = data);
     }
 }
